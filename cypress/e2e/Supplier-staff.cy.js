@@ -57,34 +57,34 @@ describe('Supplier Test', () => {
   it('Supplier details ', () => {
     cy.get('div').contains('Supplier').click()
     cy.wait(5000)
-    cy.get('#search').type(sup.Supplier_name)
+    cy.get('#search').type(sup.Supplier_Details[0])
     cy.wait(5000)
     cy.xpath("//tr[@data-testid='MUIDataTableBodyRow-0']//button[@type='button']").click()
-    // cy.xpath("//div[contains(@class, 'mz_client_quickview_values')]/p[1]")
-    // .invoke('text')
-    // .then((userName) => {
-    //         let user=userName.trim()
-    //         expect(user).equal(sup.Supplier_userName)
-    //       });
-    // cy.xpath("//div[contains(@class, 'mz_client_quickview_values')]/p[3]")
-    //  .invoke('text')
-    //  .then((dob) => {
-    //       expect(dob.trim()).equal(sup.Supplier_dob)
-    //       });
+    cy.xpath("//div[contains(@class, 'mz_client_quickview_values')]/p[1]")
+    .invoke('text')
+    .then((userName) => {
+            let user=userName.trim()
+            expect(user).equal(sup.Supplier_Details[1])
+          });
+    cy.xpath("//div[contains(@class, 'mz_client_quickview_values')]/p[3]")
+     .invoke('text')
+     .then((dob) => {
+          expect(dob.trim()).equal(sup.Supplier_Details[2])
+          });
     cy.xpath("//div[contains(@class, 'mz_client_quickview_questions _questions_adm3e_28')]/div[1]/p[1]")
       .invoke('text')
       .then((Vat) => {
-        expect(Vat).equal(' Vat Registration')
+        expect(Vat).equal(sup.Supplier_Details[3])
       });
     cy.xpath("//div[contains(@class, 'mz_client_quickview_questions _questions_adm3e_28')]/div[2]/p[1]")
       .invoke('text')
       .then((Company) => {
-        expect(Company).equal('Company Profile')
+        expect(Company).equal(sup.Supplier_Details[4])
       });
     cy.xpath("//div[contains(@class, 'mz_client_quickview_questions _questions_adm3e_28')]/div[3]/p[1]")
       .invoke('text')
       .then((Company) => {
-        expect(Company).equal('List of Customers')
+        expect(Company).equal(sup.Supplier_Details[5])
       });
 
   })

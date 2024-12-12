@@ -5,7 +5,7 @@ let de = new deal()
 
 describe('Deals Test', () => {
   beforeEach(() => {
-    cy.visit('https://staffapp.bildnw.com/')
+    cy.visit("https://staffapp.bildnw.com/")
     cy.xpath("//select[@name='countryCode']").select(log.Countrycode)
     cy.xpath("//input[@name='phoneNumber']").type(log.PhoneNumber)
     cy.xpath("//input[@name='password']").type(log.Password)
@@ -50,6 +50,11 @@ describe('Deals Test', () => {
       });
   })
 
+  // it('Date Filter', () => {
+  //   cy.get('div').contains('Deals').click()
+  //   cy.navigateTo("https://staffapp.bildnw.com/?page=1", '&created_at_after=2023-12-01&created_at_before=2024-12-01');
+  //   // cy.get('#mantine-m9sot37lg-target').type('01/12/2023 – 01/12/2024')
+  // })
 
   it('Clicking on client name', () => {
     cy.get('div').contains('Deals').click()
@@ -62,32 +67,32 @@ describe('Deals Test', () => {
   it('Deals details ', () => {
     cy.get('div').contains('Deals').click()
     cy.wait(5000)
-    cy.get('#search').type(de.Deal_Quotation)
+    cy.get('#search').type(de.Deal_details[0])
     cy.wait(5000)
     cy.xpath("//tr[@data-testid='MUIDataTableBodyRow-0']//button[@type='button']").click()
-    cy.xpath("//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]").contains('In Review')
+    cy.xpath("//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]").contains(de.Deal_details[1])
       .invoke('text')
       .then((status) => {
         let user = status.trim()
-        expect(user).equal('In Review')
+        expect(user).equal(de.Deal_details[1])
       });
-    cy.xpath("//div[contains(@class, '_finance_value_adm3e_38 ')]/p[3]").contains('Quotation received')
+    cy.xpath("//div[contains(@class, '_finance_value_adm3e_38 ')]/p[3]").contains(de.Deal_details[2])
       .invoke('text')
       .then((stage) => {
         let user = stage.trim()
-        expect(user).equal('Quotation received')
+        expect(user).equal(de.Deal_details[2])
       });
-    cy.xpath("//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]").contains('ABC')
+    cy.xpath("//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]").contains(de.Deal_details[3])
       .invoke('text')
       .then((Receiver) => {
         let user = Receiver.trim()
-        expect(user).equal('ABC')
+        expect(user).equal(de.Deal_details[3])
       });
-    cy.xpath("//div[contains(@class, '_finance_value_adm3e_38 ')]/p[4]").contains('+966574845121')
+    cy.xpath("//div[contains(@class, '_finance_value_adm3e_38 ')]/p[4]").contains(de.Deal_details[4])
       .invoke('text')
-      .then((stage) => {
-        let user = stage.trim()
-        expect(user).equal('+966574845121')
+      .then((phone) => {
+        let user = phone.trim()
+        expect(user).equal(de.Deal_details[4])
       });
   })
 

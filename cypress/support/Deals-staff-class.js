@@ -5,6 +5,8 @@ class deal {
     Payment_Status="Payment processing"
     Deal_Quotation="BB-000070"
     
+    Deal_details=["BB-000070",'In Review','Quotation received','ABC','+966574845121']
+
     getDealStage = () => this.Deal_stage;
     getPaymentStatus=()=>this.Payment_Status;
 }
