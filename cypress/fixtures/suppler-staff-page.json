@@ -1,0 +1,7 @@
+{
+"numberofSupplier":"//div[contains(@class, 'mz_list_data_count')]/div[2]",
+"searchName":"//input[name='search']",
+"Product_Category":"//input[@placeholder='Product Category']",
+"Status":"//input[@placeholder='Status']"
+
+}

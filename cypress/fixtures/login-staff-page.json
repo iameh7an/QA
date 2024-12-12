@@ -1,0 +1,6 @@
+{
+   "CountryCode": "//select[@name='countryCode']",
+   "PhoneNumber": "//input[@name='phoneNumber']",
+   "Password": "//input[@name='password']"
+}
+
