@@ -8,7 +8,7 @@ describe('Faild Login Tests ', () => {
     cy.xpath("//input[@name='phoneNumber']").type(log.ICPhoneNumber)
     cy.xpath("//input[@name='password']").type(log.ICPassword)
     cy.intercept('POST', 'https://dev.bildnw.quest/v1/core/auth/jwt/create/').as('loginRequest');
-    cy.get('button').contains('Login').click()
+    cy.get('button').contains('Login').should('be.visible').click()
     cy.wait('@loginRequest').then((interception) => {
       expect(interception.response.statusCode).to.equal(401);})
     
@@ -34,9 +34,9 @@ describe('Faild Login Tests ', () => {
     cy.xpath("//input[@name='password']").type(log.Password)
     cy.get('button').contains('Login').click()
     cy.intercept('POST', 'https://dev.bildnw.quest/v1/core/auth/jwt/create/').as('loginRequest');
-    cy.get('button').contains('Login').click()
+    cy.get('button').contains('Login').should('be.visible').click()
     cy.wait('@loginRequest').then((interception) => {
-      expect(interception.response.statusCode).to.equal(401);})
+      expect(interception.response.statusCode).to.equal(200);})
     cy.get('div').contains('Dashboard')
   })
 })

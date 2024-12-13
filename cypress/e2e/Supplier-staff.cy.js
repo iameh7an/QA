@@ -9,7 +9,7 @@ describe('Supplier Test', () => {
     cy.xpath("//select[@name='countryCode']").select(log.Countrycode)
     cy.xpath("//input[@name='phoneNumber']").type(log.PhoneNumber)
     cy.xpath("//input[@name='password']").type(log.Password)
-    cy.get('button').contains('Login').click()
+    cy.get('button').contains('Login').should('be.visible').click()
   });
 
   it('Checks if the Supplier number is greater than 0', () => {

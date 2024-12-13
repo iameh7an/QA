@@ -8,6 +8,9 @@
 "Deal_Status":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
 "Deal_Stage":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[3]",
 "Delivery_Deal_Receiver":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
-"Delivery_Deal_Phone":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[4]"
+"Delivery_Deal_Phone":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[4]",
+"Pick_first_Date":"//div//tbody[1]//tr[1]//td[7]//button",
+"Move_Calender_Previus_Date":"//div//button[@data-previous='true']",
+"Pick_last_Date":"//div//tbody[1]//tr[1]//td[5]//button"
 
 }
