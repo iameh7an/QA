@@ -50,11 +50,13 @@ describe('Deals Test', () => {
       });
   })
 
-  // it('Date Filter', () => {
-  //   cy.get('div').contains('Deals').click()
-  //   cy.navigateTo("https://staffapp.bildnw.com/?page=1", '&created_at_after=2023-12-01&created_at_before=2024-12-01');
-  //   // cy.get('#mantine-m9sot37lg-target').type('01/12/2023 – 01/12/2024')
-  // })
+  it('Date Filter', () => {
+    cy.get('div').contains('Deals').click()
+    cy.get('button').contains("Created Date").click()
+    cy.xpath('//div//tbody//tr/td[7]').click()
+    cy.wait(1000)
+    cy.xpath('//div//tbody//tr[3]/td[5]').click()
+  })
 
   it('Clicking on client name', () => {
     cy.get('div').contains('Deals').click()
