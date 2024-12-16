@@ -59,7 +59,7 @@ describe('Supplier Test', () => {
     cy.wait(5000)
     cy.get('#search').type(sup.Supplier_Details[0])
     cy.wait(5000)
-    cy.xpath("//tr[@data-testid='MUIDataTableBodyRow-0']//button[@type='button']").click()
+    cy.xpath("//tbody//tr[1]//td[1]//button[@type='button']").click()
     cy.xpath("//div[contains(@class, 'mz_client_quickview_values')]/p[1]")
     .invoke('text')
     .then((userName) => {
@@ -92,7 +92,7 @@ describe('Supplier Test', () => {
   it('Supplier details  Approve/Reject ', () => {
     cy.get('div').contains('Supplier').click()
     cy.wait(5000)
-    cy.xpath("//tr[@data-testid='MUIDataTableBodyRow-7']//button[@type='button']").click()
+    cy.xpath("//tbody//tr[1]//td[1]//button[@type='button']").click()
     cy.get("button").contains("Approve / Reject").click()
     cy.get("button").contains("Cancel").click()
   })

@@ -1,10 +1,10 @@
 {
-"ClientName_tr_td":"//tr[@data-testid='MUIDataTableBodyRow-0']//td[3]",
+"ClientName_tr_td":"//tbody//tr[1]//td[3]",
 "deal_stage":"//input[@placeholder='Deal Stage']",
 "Payment_Status":"//input[@placeholder='Payment Status']",
-"Client_name":"//tr[@data-testid='MUIDataTableBodyRow-0']//td[3]",
+"Client_name":"//tbody//tr[1]//td[3]",
 "Client_name_titalbar":"//div[contains(@class,'mz_top_title_bar')]",
-"Deal_Expand_Button":"//tr[@data-testid='MUIDataTableBodyRow-0']//button[@type='button']",
+"Deal_Expand_Button":"//tbody//tr[1]//td[1]//button[@type='button']",
 "Deal_Status":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
 "Deal_Stage":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[3]",
 "Delivery_Deal_Receiver":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
