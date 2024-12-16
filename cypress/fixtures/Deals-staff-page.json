@@ -1,12 +1,13 @@
 {
-"ClientName_tr_td":"//tbody//tr[1]//td[3]",
+"ClientName_tr_td3":"//tbody//tr[1]//td[3]",
 "deal_stage":"//input[@placeholder='Deal Stage']",
 "Payment_Status":"//input[@placeholder='Payment Status']",
-"Client_name":"//tbody//tr[1]//td[3]",
+"deal_status":"//input[@placeholder='Status']",
+"Client_name_click":"//tbody//tr[1]//td[3]",
 "Client_name_titalbar":"//div[contains(@class,'mz_top_title_bar')]",
 "Deal_Expand_Button":"//tbody//tr[1]//td[1]//button[@type='button']",
-"Deal_Status":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
-"Deal_Stage":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[3]",
+"Current_Status":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
+"Detail_Deal_Stage":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[3]",
 "Delivery_Deal_Receiver":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
 "Delivery_Deal_Phone":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[4]",
 "Pick_first_Date":"//div//tbody[1]//tr[1]//td[7]//button",
@@ -14,3 +15,4 @@
 "Pick_last_Date":"//div//tbody[1]//tr[1]//td[5]//button"
 
 }
+

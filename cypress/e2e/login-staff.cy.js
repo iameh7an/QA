@@ -1,12 +1,13 @@
 import Login from "../support/login-staff-class"
+import locater from"../fixtures/login-staff-page.json"
 let log = new Login()
 
 describe('Faild Login Tests ', () => {
   it('Login  incorrect credentials ', () => {
     cy.visit(log.baseUrl)
-    cy.xpath("//select[@name='countryCode']").select(log.ICCountrycode)
-    cy.xpath("//input[@name='phoneNumber']").type(log.ICPhoneNumber)
-    cy.xpath("//input[@name='password']").type(log.ICPassword)
+    cy.xpath(locater.CountryCode).select(log.ICCountrycode)
+    cy.xpath(locater.PhoneNumber).type(log.ICPhoneNumber)
+    cy.xpath(locater.Password).type(log.ICPassword)
     cy.intercept('POST', 'https://dev.bildnw.quest/v1/core/auth/jwt/create/').as('loginRequest');
     cy.get('button').contains('Login').should('be.visible').click()
     cy.wait('@loginRequest').then((interception) => {
@@ -16,22 +17,22 @@ describe('Faild Login Tests ', () => {
 
   it('Login with Incomplete credentials 1 ', () => {
     cy.visit(log.baseUrl)
-    cy.xpath("//input[@name='phoneNumber']").type(log.ICPhoneNumberPattren)
+    cy.xpath(locater.PhoneNumber).type(log.ICPhoneNumberPattren)
     cy.get('button').contains('Login').should('not.be.disabled')
   })
 
   it('Login with Incomplete credentials 2 ', () => {
     cy.visit(log.baseUrl)
-    cy.xpath("//select[@name='countryCode']").select(log.ICCountrycode)
-    cy.xpath("//input[@name='phoneNumber']").type(log.ICPhoneNumber)
+    cy.xpath(locater.CountryCode).select(log.ICCountrycode)
+    cy.xpath(locater.PhoneNumber).type(log.ICPhoneNumber)
     cy.get('button').contains('Login').should('not.be.disabled')
   })
 
   it('Login Success ', () => {
     cy.visit(log.baseUrl)
-    cy.xpath("//select[@name='countryCode']").select(log.Countrycode)
-    cy.xpath("//input[@name='phoneNumber']").type(log.PhoneNumber)
-    cy.xpath("//input[@name='password']").type(log.Password)
+    cy.xpath(locater.CountryCode).select(log.Countrycode)
+    cy.xpath(locater.PhoneNumber).type(log.PhoneNumber)
+    cy.xpath(locater.Password).type(log.Password)
     cy.get('button').contains('Login').click()
     cy.intercept('POST', 'https://dev.bildnw.quest/v1/core/auth/jwt/create/').as('loginRequest');
     cy.get('button').contains('Login').should('be.visible').click()
@@ -39,4 +40,6 @@ describe('Faild Login Tests ', () => {
       expect(interception.response.statusCode).to.equal(200);})
     cy.get('div').contains('Dashboard')
   })
+
 })
+
