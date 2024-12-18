@@ -1,9 +1,8 @@
 {
 "numberofSupplier":"//div[contains(@class, 'mz_list_data_count')]/div[2]",
-"searchName":"//input[name='search']",
 "Product_Category":"//input[@placeholder='Product Category']",
 "Status":"//input[@placeholder='Status']",
-"Suppler_CN_Number":"//tbody//tr[1]//td[3]",
+"Suppler_CR_Number":"//tbody//tr[1]//td[3]",
 
 "Supplier_Expand_Button":"//tbody//tr[1]//td[1]//button[@type='button']",
 "Supplier_username":"//div[contains(@class, 'mz_client_quickview_values')]/p[1]",
@@ -11,9 +10,12 @@
 "Supplier_Docoment_file_1":"//div[contains(@class, 'mz_client_quickview_questions _questions_adm3e_28')]/div[1]/p[1]",
 "Supplier_Docoment_file_2":"//div[contains(@class, 'mz_client_quickview_questions _questions_adm3e_28')]/div[2]/p[1]",
 "Supplier_Docoment_file_3":"//div[contains(@class, 'mz_client_quickview_questions _questions_adm3e_28')]/div[3]/p[1]",
-"ApproveReject_button":"//tbody//tr[1]//td[1]//button[@type='button']"
+"ApproveReject_button":"//tbody//tr[1]//td[1]//button[@type='button']",
+"click_Sup_name":"//tbody//tr[1]//td[2]",
+"IBAN_Status_check_div":"//div[contains(@class,'card_block')]//div[contains(@class,'flag-alert-msg')]"
 
 }
+
 
 
 

@@ -8,6 +8,7 @@ class deal {
     Deal_status_REJ="Rejected"
     Deal_details=["BB-000070",'In Review','Quotation received','ABC','+966574845121']
 
+    Client_details=["BB-000069","آل محمد بن علي بن جماز PLC","+966582221868","5118011032"]
     getDealStage = () => this.Deal_stage;
     getPaymentStatus=()=>this.Payment_Status;
 

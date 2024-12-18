@@ -16,6 +16,7 @@ describe('Deals Test', () => {
 
   it('Deals Search By Name 1', () => {
     cy.get('div').contains('Deals').click()
+    cy.wait(5000)
     cy.get('#search').type(de.name)
     cy.wait(5000)
     cy.xpath(de_locater.ClientName_tr_td3)
@@ -27,6 +28,7 @@ describe('Deals Test', () => {
 
   it('Deals Search By Name 2 ', () => {
     cy.get('div').contains('Deals').click()
+    cy.wait(5000)
     cy.get('#search').type(de.name_1)
     cy.wait(5000)
     cy.xpath(de_locater.ClientName_tr_td3)
@@ -65,7 +67,9 @@ describe('Deals Test', () => {
 
   it('Clicking on client name', () => {
     cy.get('div').contains('Deals').click()
+    cy.wait(5000)
     cy.get('#search').type(de.name_1)
+    cy.wait(5000)
     cy.xpath(de_locater.Client_name_click).click()
     cy.xpath(de_locater.Client_name_titalbar).contains(de.name_1)
 
@@ -102,58 +106,72 @@ describe('Deals Test', () => {
         expect(user).equal(de.Deal_details[4])
       });
   })
-  
+
   // //Error
   // it('Click on view details', () => {
   //   cy.get('div').contains('Deals').should('be.visible').click();
-  //   cy.xpath(de_locater.Deal_Expand_Button).click();  //Error when move to new page
-  //   cy.xpath("//a").contains("View details").click();
-  //   cy.wait(12000);
+  //   cy.xpath(de_locater.Deal_Expand_Button).click();  
+  //   cy.xpath("//a").contains("View details").click();//Error when move to new page
   // });
-  
+
   it(' Change Deal Status inReview to Approved', () => {
-    let deal_Quotation;
     cy.get('div').contains('Deals').click()
     cy.xpath(de_locater.deal_status).type(de.Deal_status_INREV)
-    cy.xpath("//tbody//tr[1]//td[2]")
-      .invoke('text')
-      .then((quotation) => {deal_Quotation=quotation;});
-    cy.xpath(de_locater.Deal_Expand_Button).click()
     cy.wait(5000)
-    cy.xpath("//a").contains(" Approve/Reject").click();
+    cy.xpath(de_locater.click_on_QuotationNO).click();
     cy.get('button').contains("Approve / Reject").should('be.visible').click()
-    cy.xpath('//input[@type="checkbox"]').eq(1).check()
+    cy.xpath(de_locater.CheckBox_for_T_C).eq(1).check()
     cy.get('button').contains('Submit').should('be.visible').click()
-    cy.visit('https://staffapp.bildnw.com/clients/purchase/?page=1');
-    cy.get('#search').type(deal_Quotation)
-    cy.xpath("//tbody//tr[1]//td[10]")
+    cy.xpath(de_locater.dealStatus_tital_page)
       .invoke('text')
-      .then((App) => {
-        expect(App).equal('Approved')
-         });
+      .then((status)=>{
+        expect(status).equal("Approved")
+      })
+
   });
 
   it(' Change Deal Status Reject to Approved', () => {
-    let deal_Quotation;
     cy.get('div').contains('Deals').click()
     cy.xpath(de_locater.deal_status).type(de.Deal_status_REJ)
-    cy.xpath("//tbody//tr[1]//td[2]")
-      .invoke('text')
-      .then((quotation) => {deal_Quotation=quotation;});
-    cy.xpath(de_locater.Deal_Expand_Button).click()
     cy.wait(5000)
-    cy.xpath("//a").contains(" Approve/Reject").click();
+    cy.xpath(de_locater.click_on_QuotationNO).click();
     cy.get('button').contains("Approve / Reject").should('be.visible').click()
-    cy.xpath('//input[@type="checkbox"]').eq(1).check()
+    cy.xpath(de_locater.CheckBox_for_T_C).eq(1).check()
     cy.get('button').contains('Submit').should('be.visible').click()
-    cy.visit('https://staffapp.bildnw.com/clients/purchase/?page=1');
-    cy.get('#search').type(deal_Quotation)
-    cy.xpath("//tbody//tr[1]//td[10]")
+    cy.xpath(de_locater.dealStatus_tital_page)
       .invoke('text')
-      .then((App) => {
-        expect(App).equal('Approved')
-         });
+      .then((status)=>{
+        expect(status).equal("Approved")
+      })
   });
+
+
+  it('Deals Sidebar Client Details', () => {
+    cy.get('div').contains('Deals').click()
+    cy.wait(5000)
+    cy.xpath("//input[@name='search']").should("be.visible").type(de.Client_details[0])
+    cy.wait(5000)
+    cy.xpath(de_locater.click_on_QuotationNO).click()
+    cy.xpath("//div[contains(@class,'mz_right_panel_wrapper')]//span").eq(0).click()
+    cy.wait(5000)
+    cy.xpath("//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[3]//div[2]")
+      .invoke('text')
+      .then((PhoneNumber) => {
+        expect(PhoneNumber).equal(de.Client_details[2])
+      })
+    cy.xpath("//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[7]//div[2]")
+      .invoke('text')
+      .then((CrNumber) => {
+        expect(CrNumber).equal(de.Client_details[3])
+      })
+    cy.xpath("//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[9]//div[2]")
+      .invoke('text')
+      .then((CrName) => {
+        expect(CrName).equal(de.Client_details[1])
+      })
+  });
+
+  
 
 
 })
