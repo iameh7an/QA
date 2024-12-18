@@ -15,7 +15,21 @@
 "Pick_last_Date":"//div//tbody[1]//tr[1]//td[5]//button",
 "click_on_QuotationNO":"//tbody//tr[1]//td[2]",
 "CheckBox_for_T_C":"//input[@type='checkbox']",
-"dealStatus_tital_page":"//div[contains(@class,'mz_page_title')]//span"
+"dealStatus_tital_page":"//div[contains(@class,'mz_page_title')]//span",
+"Side_panel_expand_btn":"//div[contains(@class,'mz_right_panel_wrapper')]//span",
+"Client_SidePanal_PN":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[3]//div[2]",
+"Client_sp_CRN":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[7]//div[2]",
+"Client_sp_CRName":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[9]//div[2]",
+
+"Client_Name_DetailPage":"//div[contains(@class,'mz_deal_details_top_right_info')]//div[2]",
+"Client_Order_cost_DP":"//div[contains(@style,'flex: 1 1 0%')]//div[2]",
+"Client_Client'sPay_DP":"//div[contains(@style,'flex: 1 1 0%')]//div[3]//div[2]",
+"Company_Name_DP":"//div[contains(@class,'mz_deal_details_info_right')]//div[2]",
+"Contact_DP":"//div[contains(@class,'mz_deal_details_info_right')]//div[3]",
+"Deliver_to_DP":"//div[contains(@class,'mz_deal_details_info_right')]//div[2]",
+"Receiver_DP":"//div[contains(@class,'mz_deal_details_info_right')]//div[3]",
+"Mobile_DP":"//div[contains(@class,'mz_deal_details_info_right')]//div[4]"
+
 
 }
 

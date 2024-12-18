@@ -152,25 +152,81 @@ describe('Deals Test', () => {
     cy.xpath("//input[@name='search']").should("be.visible").type(de.Client_details[0])
     cy.wait(5000)
     cy.xpath(de_locater.click_on_QuotationNO).click()
-    cy.xpath("//div[contains(@class,'mz_right_panel_wrapper')]//span").eq(0).click()
+    cy.xpath(de_locater.Side_panel_expand_btn).eq(0).click()
     cy.wait(5000)
-    cy.xpath("//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[3]//div[2]")
+    cy.xpath(de_locater.Client_SidePanal_PN)
       .invoke('text')
       .then((PhoneNumber) => {
         expect(PhoneNumber).equal(de.Client_details[2])
       })
-    cy.xpath("//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[7]//div[2]")
+    cy.xpath(de_locater.Client_sp_CRN)
       .invoke('text')
       .then((CrNumber) => {
         expect(CrNumber).equal(de.Client_details[3])
       })
-    cy.xpath("//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[9]//div[2]")
+    cy.xpath(de_locater.Client_sp_CRName)
       .invoke('text')
       .then((CrName) => {
         expect(CrName).equal(de.Client_details[1])
       })
   });
 
+
+  it("Check Deals Details on Detail page", () => {
+    cy.get('div').contains('Deals').click()
+    cy.wait(5000)
+    cy.get("#search").eq(0).type(de.client_details_deal_detailPage[0])
+    cy.wait(5000)
+    cy.xpath(de_locater.click_on_QuotationNO).click()
+    cy.wait(5000)
+    cy.xpath("//div[contains(@class,'mz_deal_details_top_right_info')]//div[2]")
+        .invoke('text')
+        .then((name) => {
+            expect(name).equal(de.client_details_deal_detailPage[1])
+        })
+    cy.xpath("//div[contains(@style,'flex: 1 1 0%')]//div[2]").eq(0)
+        .invoke('text')
+        .then((Order_cost) => {
+            expect(Order_cost).equal(de.client_details_deal_detailPage[2])
+        })
+    // cy.xpath("//div[contains(@style,'flex: 1 1 0%')]//div[3]//div[2]").eq(0)
+    //     .invoke('text')
+    //     .then((clients_pay) => {
+    //         expect(clients_pay).equal(de.client_details_deal_detailPage[3])
+    //     })
+    cy.xpath("//div[contains(@class,'mz_deal_details_info_right')]//div[2]").eq(0)
+        .invoke('text')
+        .then((company) => {
+            expect(company).equal(de.Supplier_Details[0])
+        })
+    cy.xpath("//div[contains(@class,'mz_deal_details_info_right')]//div[3]").eq(0)
+        .invoke('text')
+        .then((contact) => {
+            expect(contact).equal(de.Supplier_Details[1])
+        })
+    cy.xpath("//div[contains(@class,'mz_deal_details_info_right')]//div[2]").eq(1)
+        .invoke('text')
+        .then((Deliver_to) => {
+            expect(Deliver_to).equal(de.Delivery_Details[0])
+        })
+    cy.xpath("//div[contains(@class,'mz_deal_details_info_right')]//div[3]").eq(1)
+        .invoke('text')
+        .then((Receiver) => {
+            expect(Receiver).equal(de.Delivery_Details[1])
+        })
+    cy.xpath("//div[contains(@class,'mz_deal_details_info_right')]//div[4]").eq(0)
+        .invoke('text')
+        .then((Mobile) => {
+            expect(Mobile).equal(de.Delivery_Details[2])
+        })
+
+
+
+
+
+
+
+})
   
 
 

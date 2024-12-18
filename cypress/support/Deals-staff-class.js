@@ -9,8 +9,15 @@ class deal {
     Deal_details=["BB-000070",'In Review','Quotation received','ABC','+966574845121']
 
     Client_details=["BB-000069","آل محمد بن علي بن جماز PLC","+966582221868","5118011032"]
+
+    client_details_deal_detailPage=["BB-000002","شركة مستقبل الحديد للتجارة","SAR 50,000","SAR 77,450"]
+    Supplier_Details=["Valo hoye jao masud.... v.02.","+966599023111"]
+    Delivery_Details=["yjghj","Rakib Rakib","+966578897897"]
+
     getDealStage = () => this.Deal_stage;
     getPaymentStatus=()=>this.Payment_Status;
+
+    
 
 }
 

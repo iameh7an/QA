@@ -12,8 +12,14 @@
 "Supplier_Docoment_file_3":"//div[contains(@class, 'mz_client_quickview_questions _questions_adm3e_28')]/div[3]/p[1]",
 "ApproveReject_button":"//tbody//tr[1]//td[1]//button[@type='button']",
 "click_Sup_name":"//tbody//tr[1]//td[2]",
-"IBAN_Status_check_div":"//div[contains(@class,'card_block')]//div[contains(@class,'flag-alert-msg')]"
-
+"IBAN_Status_check_div":"//div[contains(@class,'card_block')]//div[contains(@class,'flag-alert-msg')]",
+"side_panal_expand_btn":"//div[contains(@class,'mz_right_panel_wrapper')]//span",
+"side_panal_S_name":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[2]//div[1]//div[2]",
+"side_panal_S_iban":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[2]//div[7]//div[2]",
+"side_panal_s_PN":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[2]//div[9]//div[2]",
+"side_panal_s_CRN":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[2]//div[13]//div[2]",
+"checkbok_T_C":"//input[@type='checkbox']",
+"check_change_status_toApprove":"//div[@class='mz_page_title css-0']//span"
 }
 
 
