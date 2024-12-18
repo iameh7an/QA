@@ -23,7 +23,7 @@
 
 "Client_Name_DetailPage":"//div[contains(@class,'mz_deal_details_top_right_info')]//div[2]",
 "Client_Order_cost_DP":"//div[contains(@style,'flex: 1 1 0%')]//div[2]",
-"Client_Client'sPay_DP":"//div[contains(@style,'flex: 1 1 0%')]//div[3]//div[2]",
+"Client_ClientsPay_DP":"//div[contains(@style,'flex: 1 1 0%')]//div[3]//div[2]",
 "Company_Name_DP":"//div[contains(@class,'mz_deal_details_info_right')]//div[2]",
 "Contact_DP":"//div[contains(@class,'mz_deal_details_info_right')]//div[3]",
 "Deliver_to_DP":"//div[contains(@class,'mz_deal_details_info_right')]//div[2]",
