@@ -1,5 +1,5 @@
 {
-"numberofSupplier":"//div[contains(@class, 'mz_list_data_count')]/div[2]",
+"numberofSupplier":"//div[contains(@class, 'mz_list_data_count')]//div[2]",
 "Product_Category":"//input[@placeholder='Product Category']",
 "Status":"//input[@placeholder='Status']",
 "Suppler_CR_Number":"//tbody//tr[1]//td[3]",

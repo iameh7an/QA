@@ -55,12 +55,12 @@ describe('Supplier Test', () => {
   it('Supplier Search By multiple product category ', () => {
     cy.get('div').contains('Supplier').click()
     let i = Math.floor(Math.random() * 3)
-    cy.xpath(Sup_locater.Product_Category).type(sup.Product_Category[i])
+    cy.xpath(Sup_locater.Product_Category).click().type(sup.Product_Category[i]).type('{downarrow}').type('{enter}')
   })
 
   it('Supplier Search By Status ', () => {
     cy.get('div').contains('Supplier').click()
-    cy.xpath(Sup_locater.Status).type(sup.Status)
+    cy.xpath(Sup_locater.Status).click().type(sup.Status).type('{downarrow}').type('{enter}')
   })
 
   // Error   

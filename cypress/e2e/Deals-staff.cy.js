@@ -40,12 +40,19 @@ describe('Deals Test', () => {
 
   it('Deal stage ', () => {
     cy.get('div').contains('Deals').click()
-    cy.xpath(de_locater.deal_stage).type(de.getDealStage())
+    cy.xpath(de_locater.deal_stage).click().type(de.getDealStage()).type('{downarrow}').type('{enter}')
+    cy.wait(5000)
+    cy.xpath(de_locater.Check_Deal_stage)
+      .invoke('text')
+      .then((deal) => {
+        expect(deal).equal(de.getDealStage())
+      });
+    // 
   });
 
   it('Payment stage', () => {
     cy.get('div').contains('Deals').click()
-    cy.xpath(de_locater.Payment_Status).type(de.getPaymentStatus())
+    cy.xpath(de_locater.Payment_Status).click().type(de.getPaymentStatus()).type('{downarrow}').type('{enter}')
     cy.wait(10000)
     cy.xpath("//tbody//tr[1]//td[8]")
       .invoke('text')
@@ -116,7 +123,7 @@ describe('Deals Test', () => {
 
   it(' Change Deal Status inReview to Approved', () => {
     cy.get('div').contains('Deals').click()
-    cy.xpath(de_locater.deal_status).type(de.Deal_status_INREV)
+    cy.xpath(de_locater.deal_status).click().type(de.Deal_status_INREV).type('{downarrow}').type('{enter}')
     cy.wait(5000)
     cy.xpath(de_locater.click_on_QuotationNO).click();
     cy.get('button').contains("Approve / Reject").should('be.visible').click()
@@ -132,7 +139,7 @@ describe('Deals Test', () => {
 
   it(' Change Deal Status Reject to Approved', () => {
     cy.get('div').contains('Deals').click()
-    cy.xpath(de_locater.deal_status).type(de.Deal_status_REJ)
+    cy.xpath(de_locater.deal_status).click().type(de.Deal_status_REJ).type('{downarrow}').type('{enter}')
     cy.wait(5000)
     cy.xpath(de_locater.click_on_QuotationNO).click();
     cy.get('button').contains("Approve / Reject").should('be.visible').click()

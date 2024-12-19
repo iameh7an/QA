@@ -1,0 +1,13 @@
+{
+"numberofClient":"//div[contains(@class, 'mz_list_data_count')]//div[2]",
+"Companyname":"//tbody//tr[1]//td[2]",
+"Username":"//tbody//tr[1]//td[3]",
+"CrNumber":"//tbody//tr[1]//td[4]",
+"SearchBYStatus":"//input[@placeholder='Client Status']",
+"Clientstatus":"//tbody//tr[1]//td[10]",
+"Pick_first_Date":"//div//tbody[1]//tr[1]//td[7]//button",
+"Pick_last_Date":"//div//tbody[1]//tr[5]//td[7]//button",
+"ByDate":"//tbody//tr[1]//td[8]",
+"pagination_page_2":"//nav[@aria-label='pagination navigation']//ul//li[3]//button"
+
+}

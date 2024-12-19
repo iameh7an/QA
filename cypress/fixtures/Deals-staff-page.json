@@ -4,6 +4,7 @@
 "Payment_Status":"//input[@placeholder='Payment Status']",
 "deal_status":"//input[@placeholder='Status']",
 "Client_name_click":"//tbody//tr[1]//td[3]",
+"Check_Deal_stage":"//tbody//tr[1]//td[7]",
 "Client_name_titalbar":"//div[contains(@class,'mz_top_title_bar')]",
 "Deal_Expand_Button":"//tbody//tr[1]//td[1]//button[@type='button']",
 "Current_Status":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
