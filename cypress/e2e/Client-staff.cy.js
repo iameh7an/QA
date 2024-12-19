@@ -119,4 +119,23 @@ describe('Client Test', () => {
     })
 
 
+    it('Approved client have approved credit ',()=>{
+        cy.get('div').contains('Clients').click()
+        cy.wait(5000)
+        cy.get("#search").eq(0).type("المهيدب, بن لادن and المغاولة")
+        cy.wait(5000)
+        cy.xpath(Cl_locater.ApprovedCredit_)
+            .invoke('text')
+            .then((credit)=>{
+                let Cr = parseInt(credit)
+                expect(Cr).to.be.greaterThan(0)
+            })
+        cy.xpath(Cl_locater.ApprovedCredit_).click()
+        cy.wait(5000)
+        cy.xpath(Cl_locater.select_T_C_Credit_s).select('true')
+        cy.xpath(Cl_locater.Click_on_Continue_button).click()
+        cy.xpath(Cl_locater.Click_on_yes_button).should('be.visible').click()
+    })
+
+
 })
