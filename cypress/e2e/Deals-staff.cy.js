@@ -54,7 +54,7 @@ describe('Deals Test', () => {
     cy.get('div').contains('Deals').click()
     cy.xpath(de_locater.Payment_Status).click().type(de.getPaymentStatus()).type('{downarrow}').type('{enter}')
     cy.wait(10000)
-    cy.xpath("//tbody//tr[1]//td[8]")
+    cy.xpath(de_locater.Payment_stage_in_tbody)
       .invoke('text')
       .then((stage) => {
         expect(stage).equal(de.getPaymentStatus())
@@ -99,7 +99,9 @@ describe('Deals Test', () => {
     cy.wait(5000)
     cy.get('#search').type(de.Deal_details[0])
     cy.wait(5000)
-    cy.xpath(de_locater.Deal_Expand_Button).click()
+    // cy.xpath(de_locater.Deal_Expand_Button).click()  //"Deal_Expand_Button":"//tbody//tr[1]//td[1]//button",
+    // cy.get('button').eq(16).click()
+    cy.get('button').filter(':has(.tss-jmallx-MUIDataTableSelectCell-icon)').eq(1).click();
     cy.xpath(de_locater.Current_Status).eq(0)
       .invoke('text')
       .then((status) => {
@@ -126,10 +128,10 @@ describe('Deals Test', () => {
       });
   })
 
-  // //Error
+  //Error
   // it('Click on view details', () => {
   //   cy.get('div').contains('Deals').should('be.visible').click();
-  //   cy.xpath(de_locater.Deal_Expand_Button).click();  
+  //   cy.get('button').filter(':has(.tss-jmallx-MUIDataTableSelectCell-icon)').eq(1).click();  //   cy.xpath(de_locater.Deal_Expand_Button).click();  
   //   cy.xpath("//a").contains("View details").click();//Error when move to new page
   // });
 

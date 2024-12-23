@@ -10,7 +10,7 @@
 "ByDate":"//tbody//tr[1]//td[8]",
 "pagination_page_2":"//nav[@aria-label='pagination navigation']//ul//li[3]//button",
 "ApprovedCredit_":"//tbody//tr[1]//td[5]",
-"select_T_C_Credit_s":"//div[contains(@class,'details-summary-wrapper')]/div[1]/div[2]/div[2]/div/div/select",
+"select_For_change_Of_Credit":"//div[contains(@class,'details-summary-wrapper')]/div[1]/div[2]/div[2]/div/div/select",
 "Click_on_Continue_button":"//div[contains(@class,'details-summary-wrapper')]/div[1]/div[2]/div[2]/div[2]",
 "Click_on_yes_button":"//div[contains(@class,'mantine-Modal-body')]/div[2]/button[2]"
 }

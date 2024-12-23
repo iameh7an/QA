@@ -6,7 +6,7 @@ class deal {
     Deal_Quotation="BB-000070"
     Deal_status_INREV="In Review"
     Deal_status_REJ="Rejected"
-    Deal_details=["BB-000070",'In Review','Quotation received','ABC','+966574845121']
+    Deal_details=["BB-000070",'Approved','Quotation received','ABC','+966574845121']
     Date_filter=["2023-12-1","2024-12-31"]
 
     Client_details=["BB-000069","آل محمد بن علي بن جماز PLC","+966582221868","5118011032"]

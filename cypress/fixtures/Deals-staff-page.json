@@ -6,7 +6,7 @@
 "Client_name_click":"//tbody//tr[1]//td[3]",
 "Check_Deal_stage":"//tbody//tr[1]//td[7]",
 "Client_name_titalbar":"//div[contains(@class,'mz_top_title_bar')]",
-"Deal_Expand_Button":"//tbody//tr[1]//td[1]//button[@type='button']",
+
 "Current_Status":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
 "Detail_Deal_Stage":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[3]",
 "Delivery_Deal_Receiver":"//div[contains(@class, '_finance_value_adm3e_38 ')]/p[2]",
@@ -14,6 +14,7 @@
 "Pick_first_Date":"//div//tbody[1]//tr[1]//td[7]//button",
 "Move_Calender_Previus_Date":"//div//button[@data-previous='true']",
 "Pick_last_Date":"//div//tbody[1]//tr[1]//td[5]//button",
+"ByDate":"//tbody//tr[1]//td[9]",
 "click_on_QuotationNO":"//tbody//tr[1]//td[2]",
 "CheckBox_for_T_C":"//input[@type='checkbox']",
 "dealStatus_tital_page":"//div[contains(@class,'mz_page_title')]//span",
@@ -21,7 +22,8 @@
 "Client_SidePanal_PN":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[3]//div[2]",
 "Client_sp_CRN":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[7]//div[2]",
 "Client_sp_CRName":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[9]//div[2]",
-"ByDate":"//tbody//tr[1]//td[8]",
+"Payment_stage_in_tbody":"//tbody//tr[1]//td[8]",
+
 
 "Client_Name_DetailPage":"//div[contains(@class,'mz_deal_details_top_right_info')]//div[2]",
 "Client_Order_cost_DP":"//div[contains(@style,'flex: 1 1 0%')]//div[2]",
@@ -34,4 +36,6 @@
 
 
 }
+
+
 

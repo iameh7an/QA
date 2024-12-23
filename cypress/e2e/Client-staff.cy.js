@@ -134,9 +134,9 @@ describe('Client Test', () => {
             })
         cy.xpath(Cl_locater.ApprovedCredit_).click()
         cy.wait(5000)
-        cy.xpath(Cl_locater.select_T_C_Credit_s).select('true')
+        cy.xpath(Cl_locater.select_For_change_Of_Credit).select('true')
         cy.xpath(Cl_locater.Click_on_Continue_button).click()
-        cy.xpath(Cl_locater.Click_on_yes_button).should('be.visible').click()
+        cy.get('button').contains('Yes').should('be.visible').click()
     })
 
 
