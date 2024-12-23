@@ -47,7 +47,7 @@ describe('Deals Test', () => {
       .then((deal) => {
         expect(deal).equal(de.getDealStage())
       });
-    // 
+    
   });
 
   it('Payment stage', () => {
@@ -66,10 +66,22 @@ describe('Deals Test', () => {
     cy.get('button').contains("Created Date").click()
     cy.xpath(de_locater.Pick_first_Date).click()
     cy.wait(1000)
-    for(let i=1;i<=12;i++){
+    for (let i = 1; i <= 12; i++) {
       cy.xpath(de_locater.Move_Calender_Previus_Date).click()
     }
     cy.xpath(de_locater.Pick_last_Date).click()
+    cy.wait(1000)
+    cy.xpath(de_locater.ByDate)
+      .invoke('text')
+      .then((T_Date) => {
+        // console.log(`date is= ${T_Date}`)
+        const target = new Date(T_Date);
+        const start = new Date(de.Date_filter[0]);
+        const end = new Date(de.Date_filter[1]);
+        let temp = target >= start && target <= end;
+        expect(temp).equal(true)
+      })
+
   });
 
   it('Clicking on client name', () => {
@@ -88,7 +100,7 @@ describe('Deals Test', () => {
     cy.get('#search').type(de.Deal_details[0])
     cy.wait(5000)
     cy.xpath(de_locater.Deal_Expand_Button).click()
-    cy.xpath(de_locater.Current_Status).eq(0) 
+    cy.xpath(de_locater.Current_Status).eq(0)
       .invoke('text')
       .then((status) => {
         let user = status.trim()
@@ -106,7 +118,7 @@ describe('Deals Test', () => {
         let user = Receiver.trim()
         expect(user).equal(de.Deal_details[3])
       });
-    cy.xpath(de_locater.Delivery_Deal_Phone).eq(0) 
+    cy.xpath(de_locater.Delivery_Deal_Phone).eq(0)
       .invoke('text')
       .then((phone) => {
         let user = phone.trim()
@@ -131,7 +143,7 @@ describe('Deals Test', () => {
     cy.get('button').contains('Submit').should('be.visible').click()
     cy.xpath(de_locater.dealStatus_tital_page)
       .invoke('text')
-      .then((status)=>{
+      .then((status) => {
         expect(status).equal("Approved")
       })
 
@@ -147,7 +159,7 @@ describe('Deals Test', () => {
     cy.get('button').contains('Submit').should('be.visible').click()
     cy.xpath(de_locater.dealStatus_tital_page)
       .invoke('text')
-      .then((status)=>{
+      .then((status) => {
         expect(status).equal("Approved")
       })
   });
@@ -187,45 +199,45 @@ describe('Deals Test', () => {
     cy.xpath(de_locater.click_on_QuotationNO).click()
     cy.wait(5000)
     cy.xpath(de_locater.Client_Name_DetailPage)
-        .invoke('text')
-        .then((name) => {
-            expect(name).equal(de.client_details_deal_detailPage[1])
-        })
+      .invoke('text')
+      .then((name) => {
+        expect(name).equal(de.client_details_deal_detailPage[1])
+      })
     cy.xpath(de_locater.Client_Order_cost_DP).eq(0)
-        .invoke('text')
-        .then((Order_cost) => {
-            expect(Order_cost).equal(de.client_details_deal_detailPage[2])
-        })
+      .invoke('text')
+      .then((Order_cost) => {
+        expect(Order_cost).equal(de.client_details_deal_detailPage[2])
+      })
     // cy.xpath(de_locater.Client_ClientsPay_DP).eq(0)
     //     .invoke('text')
     //     .then((clients_pay) => {
     //         expect(clients_pay).equal(de.client_details_deal_detailPage[3])
     //     })
     cy.xpath(de_locater.Company_Name_DP).eq(0)
-        .invoke('text')
-        .then((company) => {
-            expect(company).equal(de.Supplier_Details[0])
-        })
+      .invoke('text')
+      .then((company) => {
+        expect(company).equal(de.Supplier_Details[0])
+      })
     cy.xpath(de_locater.Contact_DP).eq(0)
-        .invoke('text')
-        .then((contact) => {
-            expect(contact).equal(de.Supplier_Details[1])
-        })
+      .invoke('text')
+      .then((contact) => {
+        expect(contact).equal(de.Supplier_Details[1])
+      })
     cy.xpath(de_locater.Deliver_to_DP).eq(1)
-        .invoke('text')
-        .then((Deliver_to) => {
-            expect(Deliver_to).equal(de.Delivery_Details[0])
-        })
+      .invoke('text')
+      .then((Deliver_to) => {
+        expect(Deliver_to).equal(de.Delivery_Details[0])
+      })
     cy.xpath(de_locater.Receiver_DP).eq(1)
-        .invoke('text')
-        .then((Receiver) => {
-            expect(Receiver).equal(de.Delivery_Details[1])
-        })
+      .invoke('text')
+      .then((Receiver) => {
+        expect(Receiver).equal(de.Delivery_Details[1])
+      })
     cy.xpath(de_locater.Mobile_DP).eq(0)
-        .invoke('text')
-        .then((Mobile) => {
-            expect(Mobile).equal(de.Delivery_Details[2])
-        })
+      .invoke('text')
+      .then((Mobile) => {
+        expect(Mobile).equal(de.Delivery_Details[2])
+      })
 
 
 
@@ -233,8 +245,8 @@ describe('Deals Test', () => {
 
 
 
-})
-  
+  })
+
 
 
 })

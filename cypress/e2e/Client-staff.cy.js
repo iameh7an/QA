@@ -82,19 +82,21 @@ describe('Client Test', () => {
     })
 
     it('Date Filter', () => {
-        cy.get('div').contains('Deals').click()
+        cy.get('div').contains('Clients').click()
         cy.get('button').contains("Created Date").click()
         cy.xpath(Cl_locater.Pick_first_Date).click()
         cy.wait(1000)
         cy.xpath(Cl_locater.Pick_last_Date).click()
+        cy.wait(1000)
         cy.xpath(Cl_locater.ByDate)
             .invoke('text')
             .then((T_Date) => {
+                console.log(`date is= ${T_Date}`)
                 const target = new Date(T_Date);
                 const start = new Date(Cl.Date_filter[0]);
                 const end = new Date(Cl.Date_filter[1]);
                 let temp = target >= start && target <= end;
-                expect(temp).equal('true')
+                expect(temp).equal(true)
             })
 
     });

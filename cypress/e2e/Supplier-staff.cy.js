@@ -65,40 +65,40 @@ describe('Supplier Test', () => {
 
   // Error   
   // file are not include
-  // it('Supplier details ', () => {
-  //   cy.get('div').contains('Supplier').click()
-  //   cy.wait(5000)
-  //   cy.get("#search").eq(0).type(sup.Supplier_Details[0])
-  //   cy.wait(5000)
-  //   cy.xpath(Sup_locater.Supplier_Expand_Button).click()
-  //   cy.xpath(Sup_locater.Supplier_username)
-  //     .invoke('text')
-  //     .then((userName) => {
-  //       let user = userName.trim()
-  //       expect(user).equal(sup.Supplier_Details[1])  //username with - expected username
-  //     });
-  //   cy.xpath(Sup_locater.Supplier_dob)
-  //     .invoke('text')
-  //     .then((dob) => {
-  //       expect(dob.trim()).equal(sup.Supplier_Details[2])
-  //     });
-  //   cy.xpath(Sup_locater.Supplier_Docoment_file_1)
-  //     .invoke('text')
-  //     .then((Vat) => {
-  //       expect(Vat).equal(sup.Supplier_Details[3])
-  //     });
-  //   cy.xpath(Sup_locater.Supplier_Docoment_file_2)
-  //     .invoke('text')
-  //     .then((Company) => {
-  //       expect(Company).equal(sup.Supplier_Details[4])
-  //     });
-  //   cy.xpath(Sup_locater.Supplier_Docoment_file_3)
-  //     .invoke('text')
-  //     .then((Company) => {
-  //       expect(Company).equal(sup.Supplier_Details[5])
-  //     });
+  it('Supplier details ', () => {
+    cy.get('div').contains('Supplier').click()
+    cy.wait(5000)
+    cy.get("#search").eq(0).type(sup.Supplier_Details[0])
+    cy.wait(5000)
+    cy.xpath(Sup_locater.Supplier_Expand_Button).click()
+    // cy.xpath(Sup_locater.Supplier_username)
+    //   .invoke('text')
+    //   .then((userName) => {
+    //     let user = userName.trim()
+    //     expect(user).equal(sup.Supplier_Details[1])  //username -> in test envirment have extra '-' at end of username
+    //   });
+    cy.xpath(Sup_locater.Supplier_dob)
+      .invoke('text')
+      .then((dob) => {
+        expect(dob.trim()).equal(sup.Supplier_Details[2])
+      });
+    cy.xpath(Sup_locater.Supplier_Docoment_file_1)
+      .invoke('text')
+      .then((Vat) => {
+        expect(Vat).equal(sup.Supplier_Details[3])
+      });
+    cy.xpath(Sup_locater.Supplier_Docoment_file_2)
+      .invoke('text')
+      .then((Company) => {
+        expect(Company).equal(sup.Supplier_Details[4])
+      });
+    cy.xpath(Sup_locater.Supplier_Docoment_file_3)
+      .invoke('text')
+      .then((Company) => {
+        expect(Company).equal(sup.Supplier_Details[5])
+      });
 
-  // })
+  })
 
   it('Supplier details  Approve/Reject Button ', () => {
     cy.get('div').contains('Supplier').click()

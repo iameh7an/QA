@@ -21,6 +21,7 @@
 "Client_SidePanal_PN":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[3]//div[2]",
 "Client_sp_CRN":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[7]//div[2]",
 "Client_sp_CRName":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[9]//div[2]",
+"ByDate":"//tbody//tr[1]//td[8]",
 
 "Client_Name_DetailPage":"//div[contains(@class,'mz_deal_details_top_right_info')]//div[2]",
 "Client_Order_cost_DP":"//div[contains(@style,'flex: 1 1 0%')]//div[2]",
