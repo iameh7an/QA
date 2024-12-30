@@ -10,6 +10,8 @@ class Client {
     // client edit info
 
     client_preapprove_tab=["المهيدب-المهيدب","Electrical","567644","5464","40","465611"]
+    client_Company_tab_Financials=["المهيدب-المهيدب","567644","123456789"]
+    client_Company_tab_Projects=["المهيدب-المهيدب","Electrical"]
 
 }
 

@@ -183,28 +183,66 @@ describe('Client Test', () => {
     //     cy.xpath(Cl_locater.Click_on_Continue_button).click()
     //     cy.get('button').contains('Yes').should('be.visible').click()
     // })
+    // Pre approval tab Edit 
+    // it("edit Client info pre approval", () => {
 
-    it("edit Client info pre approval", () => {
+    //     cy.get('div').contains('Clients').click()
+    //     cy.wait(5000)
+    //     cy.get("#search").eq(0).type(Cl.client_preapprove_tab[0])
+    //     cy.wait(5000)
+    //     cy.xpath(Cl_locater.ApprovedCredit_).click()
+    //     cy.wait(5000)
+    //     cy.get('div').contains('Edit').click()
+    //     cy.xpath(Cl_locater.Select_matrial_input).eq(0).click()
+    //     cy.xpath(Cl_locater.Matrial_input).type(Cl.client_preapprove_tab[1]).type('{downarrow}').type('{enter}')
+    //     cy.xpath(Cl_locater.Credit_Input).clear().type(Cl.client_preapprove_tab[2])
+    //     cy.xpath(Cl_locater.Revenue_input).clear().type(Cl.client_preapprove_tab[3])
+    //     cy.xpath(Cl_locater.Select_month).click()
+    //     cy.xpath(Cl_locater.Profit_loss_per).clear().type(Cl.client_preapprove_tab[4])
+    //     cy.xpath(Cl_locater.Outstanding_loan_input).clear().type(Cl.client_preapprove_tab[5])
+    //     cy.xpath(Cl_locater.Select_Company_Establish_year_input).eq(0).click()
+    //     cy.xpath(Cl_locater.Select_year).click()
+    //     cy.xpath(Cl_locater.Select_Company_Establish_year_input).eq(0).click()
+    //     cy.xpath(Cl_locater.audited_financials_years).click().type('{downarrow}').type('{enter}')
+    //     cy.get('button').contains('Continue').eq(0).should('be.visible').click()
+    // })
+
+    // Compeny info tab Edit 
+
+    // it('Edit Company info Edit_first_section_Financials ', () => {
+    //     let filePath='../fixtures/pdf-sample.pdf'
+    //     cy.get('div').contains('Clients').click()
+    //     cy.wait(5000)
+    //     cy.get("#search").eq(0).type(Cl.client_Company_tab_Financials[0])
+    //     cy.wait(5000)
+    //     cy.xpath(Cl_locater.ApprovedCredit_).click()
+    //     cy.wait(5000)
+    //     cy.get('button').contains('Company Info').click()
+    //     cy.get('button').contains('Edit').eq(0).click()
+    //     cy.xpath("//div[contains(@class,'mantine-Modal-body')]//input").eq(0).type(Cl.client_Company_tab_Financials[1])
+    //     cy.get('input[type="radio"][value="false"]').eq(0).check({force: true});
+    //     cy.get('input[type="radio"][value="false"]').eq(1).check({force: true});
+    //     cy.get('input[type="file"]').eq(0).attachFile(filePath)
+    //     cy.get('input[type="file"]').eq(1).attachFile(filePath)
+    //     cy.xpath("//div[contains(@class,'mantine-Modal-body')]//input").eq(7).type(Cl.client_Company_tab_Financials[2])
+    //     cy.get('input[type="file"]').eq(2).attachFile(filePath)
+    //     cy.get('button').contains('Save and Continue').should('be.visible').click()
+
+    // })
+
+
+    it('Edit Company info Edit_2nd_section_Projects', () => {
 
         cy.get('div').contains('Clients').click()
         cy.wait(5000)
-        cy.get("#search").eq(0).type(Cl.client_preapprove_tab[0])
+        cy.get("#search").eq(0).type(Cl.client_Company_tab_Projects[0])
         cy.wait(5000)
         cy.xpath(Cl_locater.ApprovedCredit_).click()
         cy.wait(5000)
-        cy.get('div').contains('Edit').click()
-        cy.xpath(Cl_locater.Select_matrial_input).eq(0).click()
-        cy.xpath(Cl_locater.Matrial_input).type(Cl.client_preapprove_tab[1]).type('{downarrow}').type('{enter}')
-        cy.xpath(Cl_locater.Credit_Input).clear().type(Cl.client_preapprove_tab[2])
-        cy.xpath(Cl_locater.Revenue_input).clear().type(Cl.client_preapprove_tab[3])
-        cy.xpath(Cl_locater.Select_month).click()
-        cy.xpath(Cl_locater.Profit_loss_per).clear().type(Cl.client_preapprove_tab[4])
-        cy.xpath(Cl_locater.Outstanding_loan_input).clear().type(Cl.client_preapprove_tab[5])
-        cy.xpath(Cl_locater.Select_Company_Establish_year_input).eq(0).click()
-        cy.xpath(Cl_locater.Select_year).click()
-        cy.xpath(Cl_locater.Select_Company_Establish_year_input).eq(0).click()
-        cy.xpath(Cl_locater.audited_financials_years).click().type('{downarrow}').type('{enter}')
-        cy.get('button').contains('Continue').eq(0).should('be.visible').click()
+        cy.get('button').contains('Company Info').click()
+        cy.xpath("//button[contains(@class,'btn cta-outline')]").eq(1).click()
+        cy.xpath("//div[contains(@class,'mantine-Modal-body')]//input").eq(3).click({force: true}).type('{downarrow}',{force: true}).type('{enter}',{force: true})
+        cy.xpath("//div[contains(@class,'mantine-Modal-body')]//input").eq(3).click({force: true})
     })
 
 })
