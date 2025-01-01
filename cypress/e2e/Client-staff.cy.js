@@ -183,7 +183,7 @@ describe('Client Test', () => {
     //     cy.xpath(Cl_locater.Click_on_Continue_button).click()
     //     cy.get('button').contains('Yes').should('be.visible').click()
     // })
-    
+
     // Pre approval tab Edit 
     // it("edit Client info pre approval", () => {
     //     cy.get('div').contains('Clients').click()
@@ -289,21 +289,59 @@ describe('Client Test', () => {
 
     // edit File Tab
 
-    it('Edit File tab', () => {
-        let filePath = '../fixtures/pdf-sample.pdf'
+    // it('Edit File tab', () => {
+    //     let filePath = '../fixtures/pdf-sample.pdf'
+    //     cy.get('div').contains('Clients').click()
+    //     cy.wait(5000)
+    //     cy.get("#search").eq(0).type(Cl.client_Files_tab[0])
+    //     cy.wait(5000)
+    //     cy.xpath(Cl_locater.ApprovedCredit_).click()
+    //     cy.wait(5000)
+    //     cy.get('button').contains('Files').click()
+    //     cy.wait(5000)
+    //     cy.get('button').contains('Upload a new file').click()
+    //     cy.xpath(Cl_locater.Input_file).attachFile(filePath)
+    //     cy.xpath(Cl_locater.Text_input).eq(0).click({ force: true }).type('{downarrow}', { force: true }).type('{enter}', { force: true })
+    //     cy.xpath(Cl_locater.Text_input).eq(1).type(Cl.client_Files_tab[1])
+    //     cy.xpath(Cl_locater.Text_input).eq(2).type(Cl.client_Files_tab[1])
+    //     cy.xpath(Cl_locater.Saveandcontinue).eq(7).click()
+    // })
+
+    //Assesment Tab Test case
+    it("Assesment Tab Add fixed file", () => {
+        let filePath = '../fixtures/Financial_Asssessment_file_fixed.xlsx'
         cy.get('div').contains('Clients').click()
         cy.wait(5000)
-        cy.get("#search").eq(0).type(Cl.client_Files_tab[0])
+        cy.get("#search").eq(0).type(Cl.client_Assesment_tab[0])
         cy.wait(5000)
         cy.xpath(Cl_locater.ApprovedCredit_).click()
         cy.wait(5000)
-        cy.get('button').contains('Files').click()
+        cy.xpath(Cl_locater.Input_radio).eq(1).click({ force: true })
         cy.wait(5000)
-        cy.get('button').contains('Upload a new file').click()
-        cy.xpath(Cl_locater.Input_file).attachFile(filePath)
-        cy.xpath(Cl_locater.Text_input).eq(0).click({ force: true }).type('{downarrow}', { force: true }).type('{enter}', { force: true })
-        cy.xpath(Cl_locater.Text_input).eq(1).type(Cl.client_Files_tab[1])
-        cy.xpath(Cl_locater.Text_input).eq(2).type(Cl.client_Files_tab[1])
-        cy.xpath(Cl_locater.Saveandcontinue).eq(7).click()
+        cy.xpath(Cl_locater.Input_file).eq(0).attachFile(filePath)
+        cy.intercept('PATCH', Cl.File_API).as('checkFileresponse');
+        cy.get('button').contains('Submit Assessment').should('be.visible').click()
+        cy.wait('@checkFileresponse').then((interception) => {
+            expect(interception.response.statusCode).to.equal(200);
+        })
+    })
+
+    it("Assesment Tab Add ERROR file", () => {
+        let filePath = '../fixtures/Financials_Sample_Data.xlsx'
+        cy.get('div').contains('Clients').click()
+        cy.wait(5000)
+        cy.get("#search").eq(0).type(Cl.client_Assesment_tab[0])
+        cy.wait(5000)
+        cy.xpath(Cl_locater.ApprovedCredit_).click()
+        cy.wait(5000)
+        cy.xpath(Cl_locater.Input_radio).eq(1).click({ force: true })
+        cy.wait(5000)
+        cy.xpath(Cl_locater.Input_file).eq(0).attachFile(filePath)
+        cy.intercept('PATCH', Cl.File_API).as('checkFileresponse');
+        cy.get('button').contains('Submit Assessment').should('be.visible').click()
+        cy.wait('@checkFileresponse').then((interception) => {
+            expect(interception.response.statusCode).to.equal(400);
+        })
+        cy.xpath(Cl_locater.error_tost).should('be.visible')
     })
 })

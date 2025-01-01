@@ -43,7 +43,10 @@
 "Text_input":"//input[@type='text']",
 "Expire_date":"//div[contains(@aria-haspopup,'menu')]",
 "Saveandcontinue":"//div[@class='btn-content-wrapper']",
-"Select_calender_date":"//tbody/tr[1]/td[7]"
+"Select_calender_date":"//tbody/tr[1]/td[7]",
+
+"Input_radio":"//input[@type='radio']",
+"error_tost":"//div[contains(@class,'Toastify__toast-container')]"
 
 
 
