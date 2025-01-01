@@ -183,9 +183,9 @@ describe('Client Test', () => {
     //     cy.xpath(Cl_locater.Click_on_Continue_button).click()
     //     cy.get('button').contains('Yes').should('be.visible').click()
     // })
+    
     // Pre approval tab Edit 
     // it("edit Client info pre approval", () => {
-
     //     cy.get('div').contains('Clients').click()
     //     cy.wait(5000)
     //     cy.get("#search").eq(0).type(Cl.client_preapprove_tab[0])
@@ -219,30 +219,91 @@ describe('Client Test', () => {
     //     cy.wait(5000)
     //     cy.get('button').contains('Company Info').click()
     //     cy.get('button').contains('Edit').eq(0).click()
-    //     cy.xpath("//div[contains(@class,'mantine-Modal-body')]//input").eq(0).type(Cl.client_Company_tab_Financials[1])
+    //     cy.xpath(Cl_locater.Input_credit_line).eq(0).type(Cl.client_Company_tab_Financials[1])
     //     cy.get('input[type="radio"][value="false"]').eq(0).check({force: true});
     //     cy.get('input[type="radio"][value="false"]').eq(1).check({force: true});
     //     cy.get('input[type="file"]').eq(0).attachFile(filePath)
     //     cy.get('input[type="file"]').eq(1).attachFile(filePath)
-    //     cy.xpath("//div[contains(@class,'mantine-Modal-body')]//input").eq(7).type(Cl.client_Company_tab_Financials[2])
+    //     cy.xpath(Cl_locater.vat_number_input).eq(7).type(Cl.client_Company_tab_Financials[2])
     //     cy.get('input[type="file"]').eq(2).attachFile(filePath)
     //     cy.get('button').contains('Save and Continue').should('be.visible').click()
 
     // })
 
 
-    it('Edit Company info Edit_2nd_section_Projects', () => {
+    // it('Edit Company info Edit_2nd_section_Projects', () => {
+    //     let filePath = '../fixtures/pdf-sample.pdf'
+    //     cy.get('div').contains('Clients').click()
+    //     cy.wait(5000)
+    //     cy.get("#search").eq(0).type(Cl.client_Company_tab_Projects[0])
+    //     cy.wait(5000)
+    //     cy.xpath(Cl_locater.ApprovedCredit_).click()
+    //     cy.wait(5000)
+    //     cy.get('button').contains('Company Info').click()
+    //     cy.xpath(Cl_locater.Click_Edit_button).eq(1).click()
+    //     cy.xpath(Cl_locater.Matrial_input).eq(5).click({ force: true }).type('{downarrow}', { force: true }).type('{enter}', { force: true })
+    //     cy.xpath(Cl_locater.Matrial_input).eq(5).click({ force: true })
+    //     cy.xpath(Cl_locater.Text_input).eq(1).click().type(Cl.client_Company_tab_Projects[1])
+    //     // cy.get('input[type="range"]').eq(0)   Becaue this Ranhe input not working in test envirment
+    //     // .invoke('val', 33)
+    //     // .trigger('input', { force: true })
+    //     cy.get('input[type="range"]').eq(1)
+    //         .invoke('val', 33)
+    //         .trigger('input', { force: true })
+    //     cy.xpath(Cl_locater.CheckBox_Project_edit).eq(2).check()
+    //     cy.xpath(Cl_locater.CheckBox_Project_edit).eq(3).check()
+    //     cy.xpath(Cl_locater.Matrial_input).eq(6).click({ force: true }).type('{downarrow}', { force: true }).type('{enter}', { force: true })
+    //     cy.xpath(Cl_locater.Text_input).eq(2).click().type(Cl.client_Company_tab_Projects[2])
+    //     cy.xpath(Cl_locater.Input_file).eq(0).attachFile(filePath)
+    //     cy.xpath(Cl_locater.Input_file).eq(1).attachFile(filePath)
+    //     cy.xpath(Cl_locater.Saveandcontinue).eq(6).scrollIntoView().click()
+    // })
 
+    // it('Edit Company info Edit_3rd_section_Other', () => {
+    //     let filePath = '../fixtures/pdf-sample.pdf'
+    //     cy.get('div').contains('Clients').click()
+    //     cy.wait(5000)
+    //     cy.get("#search").eq(0).type(Cl.client_Company_tab_Projects[0])
+    //     cy.wait(5000)
+    //     cy.xpath(Cl_locater.ApprovedCredit_).click()
+    //     cy.wait(5000)
+    //     cy.get('button').contains('Company Info').click()
+    //     cy.xpath(Cl_locater.Click_Edit_button).eq(2).click()
+    //     cy.wait(5000)
+    //     cy.xpath(Cl_locater.File_input).eq(0).attachFile(filePath)
+    //     cy.xpath(Cl_locater.Expire_date).eq(1).click()
+    //     cy.xpath(Cl_locater.Select_calender_date).click()
+    //     cy.xpath(Cl_locater.Expire_date).eq(1).click()
+    //     cy.xpath(Cl_locater.File_input).eq(1).attachFile(filePath)
+    //     cy.xpath(Cl_locater.Expire_date).eq(2).click()
+    //     cy.xpath(Cl_locater.Select_calender_date).click()
+    //     cy.xpath(Cl_locater.Expire_date).eq(2).click()
+    //     cy.xpath(Cl_locater.Text_input).eq(1).type("2")
+    //     cy.xpath(Cl_locater.File_input).eq(2).attachFile(filePath)
+    //     cy.xpath(Cl_locater.File_input).eq(3).attachFile(filePath)
+    //     cy.xpath(Cl_locater.File_input).eq(4).attachFile(filePath)
+    //     cy.xpath(Cl_locater.Saveandcontinue).eq(6).scrollIntoView().click()
+
+    // })
+
+
+    // edit File Tab
+
+    it('Edit File tab', () => {
+        let filePath = '../fixtures/pdf-sample.pdf'
         cy.get('div').contains('Clients').click()
         cy.wait(5000)
-        cy.get("#search").eq(0).type(Cl.client_Company_tab_Projects[0])
+        cy.get("#search").eq(0).type(Cl.client_Files_tab[0])
         cy.wait(5000)
         cy.xpath(Cl_locater.ApprovedCredit_).click()
         cy.wait(5000)
-        cy.get('button').contains('Company Info').click()
-        cy.xpath("//button[contains(@class,'btn cta-outline')]").eq(1).click()
-        cy.xpath("//div[contains(@class,'mantine-Modal-body')]//input").eq(3).click({force: true}).type('{downarrow}',{force: true}).type('{enter}',{force: true})
-        cy.xpath("//div[contains(@class,'mantine-Modal-body')]//input").eq(3).click({force: true})
+        cy.get('button').contains('Files').click()
+        cy.wait(5000)
+        cy.get('button').contains('Upload a new file').click()
+        cy.xpath(Cl_locater.Input_file).attachFile(filePath)
+        cy.xpath(Cl_locater.Text_input).eq(0).click({ force: true }).type('{downarrow}', { force: true }).type('{enter}', { force: true })
+        cy.xpath(Cl_locater.Text_input).eq(1).type(Cl.client_Files_tab[1])
+        cy.xpath(Cl_locater.Text_input).eq(2).type(Cl.client_Files_tab[1])
+        cy.xpath(Cl_locater.Saveandcontinue).eq(7).click()
     })
-
 })

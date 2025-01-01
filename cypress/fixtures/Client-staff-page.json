@@ -21,7 +21,10 @@
 "Client_sp_CRName":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[9]//div[2]",
 
 "Select_matrial_input":"//div[contains(@class,'mantine-Input-wrapper')]",
-"Matrial_input":"//div[contains(@class,'mantine-Input-wrapper')]/div/div//input",
+"Matrial_input":"//input[@type='search']",
+"Profit_margin_project":"//input[@type='text']",
+"CheckBox_Project_edit":"//input[@type='checkbox']",
+"Input_file":"//input[@type='file']",
 "Credit_Input":"//div[contains(@class,'mz_form_wrapper')]/div[1]/div[2]/div/input",
 "Revenue_input":"//div[contains(@class,'mz_form_wrapper')]/div[2]/div[2]/div/input",
 "Select_month":"//div[contains(@class,'mz_form_wrapper')]/div[2]/div/div/div[2]/div[6]",
@@ -29,6 +32,22 @@
 "Outstanding_loan_input":"//div[contains(@class,'mz_form_wrapper')]/div[3]/div[2]/div/input",
 "Select_Company_Establish_year_input":"//div[contains(@class,'mz_form_wrapper')]/div[4]/div/div[1]",
 "Select_year":"//tbody//tr[1]//td[2]",
-"audited_financials_years":"//div[contains(@class,'mz_form_wrapper')]/div[4]/div[2]/div/div"
+"audited_financials_years":"//div[contains(@class,'mz_form_wrapper')]/div[4]/div[2]/div/div",
+
+"Input_credit_line":"//div[contains(@class,'mantine-Modal-body')]//input",
+"vat_number_input":"//div[contains(@class,'mantine-Modal-body')]//input",
+"Click_Edit_button":"//button[contains(@class,'btn cta-outline')]",
+"Get_material_":"//div[contains(@class,'mantine-Modal-body')]//input",
+
+"File_input":"//div[contains(@class,'mantine-Dropzone-root ')]/input[@type='file']",
+"Text_input":"//input[@type='text']",
+"Expire_date":"//div[contains(@aria-haspopup,'menu')]",
+"Saveandcontinue":"//div[@class='btn-content-wrapper']",
+"Select_calender_date":"//tbody/tr[1]/td[7]"
+
+
+
+
+
 
 }
