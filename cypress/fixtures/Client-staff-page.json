@@ -21,7 +21,7 @@
 "Client_sp_CRName":"//div[contains(@class,'mantine-Tabs-root')]//div[2]//div[3]//div[9]//div[2]",
 
 "Select_matrial_input":"//div[contains(@class,'mantine-Input-wrapper')]",
-"Matrial_input":"//input[@type='search']",
+"input_search":"//input[@type='search']",
 "Profit_margin_project":"//input[@type='text']",
 "CheckBox_Project_edit":"//input[@type='checkbox']",
 "Input_file":"//input[@type='file']",
@@ -46,7 +46,16 @@
 "Select_calender_date":"//tbody/tr[1]/td[7]",
 
 "Input_radio":"//input[@type='radio']",
-"error_tost":"//div[contains(@class,'Toastify__toast-container')]"
+"Input_radio_assessment":"//div[contains(@class,'mantine-SegmentedControl-root')]/div[2]",
+"InP_radio_Approve":"//div[contains(@class,'mantine-SegmentedControl-root')]/div[1]",
+"InP_radio_Reject":"//div[contains(@class,'mantine-SegmentedControl-root')]/div[2]",
+
+"error_tost":"//div[contains(@class,'Toastify__toast-container')]",
+
+
+"input_defult":"//input[@id='input-default']",
+"input_hidden":"//input[@type='hidden']",
+"Submit":"//button[contains(@class,'mantine-Button-root')]/div[1]/span[1]"
 
 
 

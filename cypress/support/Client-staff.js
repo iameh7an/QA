@@ -17,6 +17,11 @@ class Client {
     client_Assesment_tab=["المهيدب-المهيدب"]
 //Client file submit in assesment tab api url
 File_API='https://dev.bildnw.quest/v1/core/staff_financial_assessment/66c61953-128c-4a31-b35a-4511b6822884/'
+
+client_Assesment_RandP=["شركة الركن العالي للمقاولات شركة شخص واحد","30","56789"]
+
+
+
 }
 
 
